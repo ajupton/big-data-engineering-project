@@ -2,7 +2,7 @@
 Hey there! Welcome to this repo where I practice building a big data engineering project. Here is a basic run down of the project:
 
 1. Generate synthetic log data on hourly/daily basis, emulating a production system
-2. Create a library of utility function for use across future ETLs
+2. Create a library of utility functions for use across current and future ETLs
 3. Create a mini data lake on S3 
 4. Practice applying the big data performance optimization techniques on our tables and datasets
 5. Run multiple ETL job on Amazon EMR using the S3 log data
@@ -18,4 +18,5 @@ Props to the folks over at [ConfusedCoders](https://confusedcoders.com/) for ins
 
 
 ## Step 1: Setup an AWS S3 Bucket
-Setting up an S3 bucket is pretty straightforward. Simply create an AWS account, click on Services in the upper left hand side, navigate to Storage and select S3. From there you'll be able to create a new S3 bucket following the prompts and inputing settings based on your unique needs. I largely followed the default options. Once created, simply select the bucket and in the Overview tab, there are options to upload object/files, create folders, or set permissions. Alternatively, it's possible to install AWS Cli to your machine in order to transfer files at the command line. [See here for a brief overview of transferring files to an S3 bucket using AWS Cli](https://confusedcoders.com/data-engineering/how-to-copy-kaggle-data-to-amazon-s3).
+Setting up an S3 bucket is pretty straightforward, and the current 5 GB free tier limit for 12 months is a great way to get started with AWS S3 without having to break the bank. Simply create an AWS account, click on Services in the upper left hand side, navigate to Storage and select S3. From there you'll be able to create a new S3 bucket following the prompts and inputing settings based on your unique needs. I largely followed the default options. Once created, simply select the bucket and in the Overview tab, there are options to upload object/files, create folders, or set permissions. Alternatively, it's possible to install AWS Cli to your machine in order to transfer files at the command line. [See here for a brief overview of transferring files to an S3 bucket using AWS Cli](https://confusedcoders.com/data-engineering/how-to-copy-kaggle-data-to-amazon-s3).
+
