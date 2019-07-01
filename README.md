@@ -1,28 +1,28 @@
 # Big Data Engineering Project
 Hey there! Welcome to this repo where I practice building a big data engineering project. Here is a basic run down of the project:
 
-1. Generate synthetic log data on hourly/daily basis, emulating a production system
-2. Create a library of utility functions for use across current and future ETLs
-3. Populate a mini data lake on S3 
-4. Practice applying the big data performance optimization techniques on our tables and datasets
-5. Run multiple ETL job on Amazon EMR using the S3 log data
-  * ETL 1 : Daily/hourly injection job that cleans the raw logs on S3, extracts required fields and creates an incremental table
-  * ETL 2 : Daily/hourly summary job that reads from the clean table from ETL 1 to create an aggregated table that would be updated daily/hourly
-6. Incorporate Hive and Spark-SQL in ETL jobs
-
-To accomplish all of this, we will use python, Airflow, AWS (S3 and EMR), and Spark
-
 # Problem Statement
 Retailers in the current landscape are adapting to the digital age. Digital behemoths like Amazon and Ebay have carved out substantial market shares in the online space at the same time that traditional retail venues are in decline. In this time of flux, an omni-channel approach is necessary. This is especially true for retailers that have invested in an extensive brick-and-mortar portfolio and strong relationships with brick-and-mortar partners. 
 
-This data engineering project uses a real world retail dataset to explore delivery performance at scale. The primary concern of data engineering efforts in this project is to create a strong foundation onto which data analytics and modeling may be applied. 
+This data engineering project uses a real world retail dataset to explore delivery performance at scale. The primary concern of data engineering efforts in this project is to create a strong foundation onto which data analytics and modeling may be applied as well as provide summary reports for daily ingestion by decision makers. 
 
 # Dataset of choice
 The dataset of choice for this project is a series of tables [provided by the Brazilian Ecommerce company Olist](https://www.kaggle.com/olistbr/brazilian-ecommerce/home#olist_orders_dataset.csvhttps://www.kaggle.com/olistbr/brazilian-ecommerce/home#olist_orders_dataset.csv). The table schema is provided here:
 
 ![](https://i.imgur.com/HRhd2Y0.png)
 
+# Methodology:
+1. Construct a mock production database replete with a table schema that can be updated hourly/daily 
+2. Create a library of utility functions for use across current and future ETLs
+3. Populate a mini data lake on S3 
+4. Use big data performance optimization techniques to analyze the tables and prepare them for ETL jobs
+5. Build ETL pipelines to extract data from the lake, clean and transform it, and load it into a mini data warehouse on the same S3 bucket
+  * ETL 1 : Hourly/daily injection job that cleans the tables on S3, extracts/combines required fields and creates an incremental table
+  * ETL 2 : Hourly/daily summary job that reads from the clean table from ETL 1 to create an aggregated table for ingestion in a daily report
+  * ETL 3: Daily feature engineering job that extracts features from multiple tables, cleans them up, and prepares them for ingestion in a data modeling task related to delivery performance
+6. Incorporate Hive and Spark-SQL in ETL jobs
 
+To accomplish all of this, we will use python, Airflow, AWS (S3 and EMR), and Spark
 
 ## Step 1: Setup an AWS S3 Bucket
 Setting up an S3 bucket is pretty straightforward, and the current 5 GB free tier limit for 12 months is a great way to get started with AWS S3 without having to break the bank. Simply create an AWS account, click on Services in the upper left hand side, navigate to Storage and select S3. From there you'll be able to create a new S3 bucket following the prompts and inputing settings based on your unique needs. I largely followed the default options. Once created, simply select the bucket and in the Overview tab, there are options to upload object/files, create folders, or set permissions. Alternatively, it's possible to install AWS Cli to your machine in order to transfer files at the command line. [See here for a brief overview of transferring files to an S3 bucket using AWS Cli](https://confusedcoders.com/data-engineering/how-to-copy-kaggle-data-to-amazon-s3).
