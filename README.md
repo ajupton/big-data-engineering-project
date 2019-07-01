@@ -35,7 +35,7 @@ A meaningful data engineering project requires motivation and dedication to see 
 
 Sports data, home inventory/sales data, and tweets are examples of data that can lead to strong data engineering projects because they are updated frequently, large in size and scope, require lots of post-processing, and are often topically driven around the interests of aspiring data engineers. 
 
-
+## More steps on the way!
 
 
 
