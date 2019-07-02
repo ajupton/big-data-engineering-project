@@ -35,6 +35,8 @@ A meaningful data engineering project requires motivation and dedication to see 
 
 Sports data, home inventory/sales data, and tweets are examples of data that can lead to strong data engineering projects because they are updated frequently, large in size and scope, require lots of post-processing, and are often topically driven around the interests of aspiring data engineers. 
 
+There are two general ways to upload data onto S3. The first is to use the GUI tool in the S3 interface. This is all manual and as a result isn't something that a good data engineer would want to use. Instead, the AWS CLI (command line interface) is preferred. [You can find out more about installing the AWS CLI here.](https://aws.amazon.com/cli/) In short, you'll need to install the AWS CLI using `pip install awscli --upgrade --user` [and then configure your credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
+
 ## More steps on the way!
 
 
