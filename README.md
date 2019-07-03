@@ -39,6 +39,18 @@ There are two general ways to upload data onto S3. The first is to use the GUI t
 
 Once your AWS CLI credentials are input, it's easy to copy (or cp) files onto it from the terminal using the following syntax: `aws s3 cp <local file path> <s3 path>`  e.g. `aws s3 cp ~/file_to_upload.csv s3://s3-bucket-name/folder_path/`
 
+In general, data lakes are populated with data that was created in an OLTP (or online transaction processing) system. These kinds of systems are, in essence, what drive data collection in modern industry. They are designed to be fast and reliable above all else in processing transactions. These systems take orders, sign up new customers, record shipments, log comments and complaints, etc. As a result, they aren't optimized for analytics (or OLAP). The objective of OLAP systems are getting the data from the OLTP out and in such a way as to make it amenable for digestion by analytics platforms like Tableau dashboards or TensorFlow deep learning models. Our objective here is to create data pipelines that take in messy OLTP data, transform it, and load it into a nice neat data warehouse. 
+
+## Step 4: Let's do some analytics
+One of the strongest skillsets needed by a data engineer is communication. That communication needs to be flexed primarily in conversations with stakeholders that will consume the data at the end of the ETL and stream pipelines that data engineers construct. Data engineers often need to rely on the domain expertise of analysts, data scientists, program managers, executives, and others in order to understand what specific data features are needed for various analytics applications. That said, data engineers still need to possess strong EDA (exploratory data analysis) chops in order to deliver data sets that meet the needs of various stakeholders. As a result, it's very often worthwhile for the data engineer to get down and dirty with the data in the data lake through data visualization, the computing of summary statistics, and other exploratory methods. 
+
+My go-to tool of choice in this regard is a Jupyter notebook using python, numpy, pandas, altair/seaborn/matplotlib/plotly, and other python packages. For data that is truly 'big' and can't fit in memory of a single machine, Spark becomes invaluable. Of course, this analytics approach is possible in all sorts of AWS services like Athena and EMR, it can often be worthwhile to take samples of data from the data lake and get some EDA in to get a feel for the tables and schema. 
+
+## Step 5: Get hands-on with Airflow 
+There are many tools out there to run big data ETL jobs that turn messy data lakes into analytics-ready data warehouses. Here, I'll focus on one of the most popular open source ETL tools currently available - Apache Airflow. [Check out the Airflow docs here](https://airflow.apache.org/index.html). First, get Airflow installed with `pip install apache-airflow`. Make sure to include the 'apache' part there, or you'll download an older version of Airflow that will lead to a whole lot of problems down the line. 
+
+
+
 ## More steps on the way!
 
 
