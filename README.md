@@ -12,15 +12,14 @@ The dataset of choice for this project is a series of tables [provided by the Br
 ![](https://i.imgur.com/HRhd2Y0.png)
 
 # Methodology:
-1. Construct a mock production database replete with a table schema that can be updated hourly/daily 
+1. Construct a mock production data lake replete with a table schema that can be updated hourly/daily 
 2. Create a library of utility functions for use across current and future ETLs
-3. Populate a mini data lake on S3 
-4. Use big data performance optimization techniques to analyze the tables and prepare them for ETL jobs
-5. Build ETL pipelines to extract data from the lake, clean and transform it, and load it into a mini data warehouse on the same S3 bucket
+3. Use big data performance optimization techniques to analyze the tables and prepare them for ETL jobs
+4. Build ETL pipelines to extract data from the lake, clean and transform it, and load it into a mini data warehouse on the same S3 bucket
   * ETL 1 : Hourly/daily injection job that cleans the tables on S3, extracts/combines required fields and creates an incremental table
   * ETL 2 : Hourly/daily summary job that reads from the clean table from ETL 1 to create an aggregated table for ingestion in a daily report
   * ETL 3: Daily feature engineering job that extracts features from multiple tables, cleans them up, and prepares them for ingestion in a data modeling task related to delivery performance
-6. Incorporate Hive and Spark-SQL in ETL jobs
+5. Incorporate Hive and Spark-SQL in ETL jobs
 
 To accomplish all of this, we will use python, Airflow, AWS (S3 and EMR), and Spark
 
