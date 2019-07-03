@@ -37,6 +37,8 @@ Sports data, home inventory/sales data, and tweets are examples of data that can
 
 There are two general ways to upload data onto S3. The first is to use the GUI tool in the S3 interface. This is all manual and as a result isn't something that a good data engineer would want to use. Instead, the AWS CLI (command line interface) is preferred. [You can find out more about installing the AWS CLI here.](https://aws.amazon.com/cli/) In short, you'll need to install the AWS CLI using `pip install awscli --upgrade --user` [and then configure your credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
 
+Once your AWS CLI credentials are input, it's easy to copy (or cp) files onto it from the terminal using the following syntax: `aws s3 cp <local file path> <s3 path>`  e.g. `aws s3 cp ~/file_to_upload.csv s3://s3-bucket-name/folder_path/`
+
 ## More steps on the way!
 
 
