@@ -46,7 +46,7 @@ One of the strongest skillsets needed by a data engineer is communication. That 
 My go-to tool of choice in this regard is a Jupyter notebook using python. A typical workflow involes using SQLAlchemy to connect to a database and pull data with some pythonic SQL and then use numpy, pandas, altair/seaborn/matplotlib/plotly, and other python packages for visualization, the computing of summary statitistics, maybe running a few statistical models, and other EDA techniques. For data that is truly 'big' and can't fit in memory on a single machine, Spark becomes invaluable. Spark SQL makes pulling and manipulating data a breeze as well for those with SQL chops. Of course, this analytics approach is possible in all sorts of AWS services like Athena and EMR among many others. With massive volumes of data, it can often be worthwhile to take samples of data from the data lake and get some EDA in to get a feel for the tables and schema as well as to understand the quirks of the data. OLTP processes often must follow multiple business rules that make it a major challenge to do things like join disparate datasets, hammer down ground-truth insights, or compare current and historical trends.  
 
 ## Step 5: Get hands-on with Airflow 
-There are many tools out there to run big data ETL jobs that turn messy data lakes into analytics-ready data warehouses. Here, I'll focus on one of the most popular open source ETL tools currently available - Apache Airflow. [Check out the Airflow docs here](https://airflow.apache.org/index.html). First, get Airflow installed with `pip install apache-airflow`. Make sure to include the 'apache' part there, or you'll download an older version of Airflow that will lead to a whole lot of problems down the line. 
+There are many tools out there to run big data ETL jobs that turn messy data lakes into analytics-ready data warehouses. Here, I'll focus on one of the most popular open source ETL tools currently available - Apache Airflow. [Check out the Airflow docs here](https://airflow.apache.org/index.html). First, install Airflow  with `pip install apache-airflow`. Make sure to include the 'apache' part there, or you'll download an older version of Airflow that will lead to a whole lot of problems down the line. 
 
 _Note:_ It can often be worthwhile to run Airflow in a Docker container. There are some major advantages to using a Docker container such as: 
 * creating a fully reproducible data analysis in Jupyter notebooks or other dev platforms (something that's less trivial than you might think) 
@@ -57,8 +57,10 @@ _Note:_ It can often be worthwhile to run Airflow in a Docker container. There a
 Here are a few resources to help you get started with Airflow:
 * [Airflow quickstart guide](http://airflow.apache.org/start.html)
 * [ETL Best Practices with Airflow](https://gtoonstra.github.io/etl-with-airflow/index.html)
+* [Developing Workflows with Apache Airflow](http://michal.karzynski.pl/blog/2017/03/19/developing-workflows-with-apache-airflow/)
 * [Getting Started with Airflow Using Docker](https://towardsdatascience.com/getting-started-with-airflow-using-docker-cd8b44dbff98)
-
+* [Basic DAG Configuration](https://adataguru.net/basic-dag-configuration/)
+*
 
 
 
