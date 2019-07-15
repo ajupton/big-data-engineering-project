@@ -1,4 +1,4 @@
-# Big Data Engineering Project
+# 'Little' Big Data Engineering Project
 Hey there! Welcome to this repo where I practice building a big data engineering project. Here is a basic run down of the project:
 
 # Problem Statement
