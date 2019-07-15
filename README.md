@@ -1,5 +1,5 @@
 # 'Little' Big Data Engineering Project
-Hey there! Welcome to this repo where I practice building a big data engineering project. Here is a basic run down of the project:
+Hey there! Welcome to this repo where I practice building a data engineering pipeline. Here is a basic run down of the project:
 
 # Problem Statement
 Retailers in the current landscape are adapting to the digital age. Digital retail behemoths have carved out substantial market shares in the online space at the same time that traditional retail stores are broadly in decline. In this time of digital flux, an omni-channel retail approach is necessary to keep pace. This is especially true for retailers that have invested in an extensive brick-and-mortar store portfolio or have strong relationships with brick-and-mortar partners. 
