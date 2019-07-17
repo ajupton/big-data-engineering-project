@@ -1,8 +1,8 @@
-# First, unzip the file with the Olist data
+# First, unzip the file with the Olist ecommerce data
 from zipfile import ZipFile
 
 # Create a ZipFile Object and load brazilian-ecommerce.zip in it
-with ZipFile('/path/to/Brazilian-ecommerce.zip', #<<<<<<<< edit path
+with ZipFile('/path/to/Brazilian-ecommerce.zip', #<<<<<<<< edit path location where you saved the file!!!
              'r') as zipObj:
     # Extract all the contents of zip file in current directory
     zipObj.extractall()
@@ -22,13 +22,13 @@ print(spark)
 from pyspark.sql import SQLContext
 sqlContext = SQLContext(spark)
 
-# Setup a Spark SQL context and read in the pandas dataframe to a Spark dataframe
+# Edit Spark SQL context for ease of use with Pandas
 spark.conf.set("spark.sql.execution.arrow.enabled", "true")
 
 # Build a spark session
 spark = SparkSession.builder.getOrCreate()
 
-# Load in csv file into spark dataframes
+# Load in csv files into spark dataframes
 df_items = spark.read.format("csv") \
             .option("header", "true") \
             .option("inferSchema", "true") \
@@ -44,7 +44,7 @@ df_products = spark.read.format("csv") \
                 .option("inferSchema", "true") \
                 .load("olist_products_dataset.csv")
 
-# Create SQL Tables from dfs
+# Create SQL Table Views from dfs for SQL querying
 df_items.createOrReplaceTempView('items')
 df_orders.createOrReplaceTempView('orders')
 df_products.createOrReplaceTempView('products')
