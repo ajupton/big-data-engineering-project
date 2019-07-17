@@ -2,7 +2,7 @@
 from zipfile import ZipFile
 
 # Create a ZipFile Object and load brazilian-ecommerce.zip in it
-with ZipFile('/path/to/Brazilian-ecommerce.zip', #<<<<<<<< edit path location where you save the file!!!
+with ZipFile('/path/to/Brazilian-ecommerce.zip', #<<<<<<<< edit path location where you saved the file!!!
              'r') as zipObj:
     # Extract all the contents of zip file in current directory
     zipObj.extractall()
