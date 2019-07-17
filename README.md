@@ -73,3 +73,5 @@ To run the job, make sure to first edit the paths of each of the scripts to matc
 One thing to note about the scripts is the `.set_upstream()` method applied to the second two operators. This ensures that if, for any reason, the initial file download fails that Airflow will retry the jobs. Another thing to note about the dag is the schedule, which I'm manually triggering using the Airflow UI. There's a lot more depth to job scheduling. 
 
 But there you have it! This is a pretty simple pipeline, and shows how powerful Airflow can be in its ability to schedule various jobs using a variety of technologies like python and Spark. This only scratches the surface of what's capable with Airflow. 
+
+The next step in this process is incorporating AWS EMR into the pipeline to run the Spark job on a cluster instead of locally on my machine. Stay tuned for updates!
